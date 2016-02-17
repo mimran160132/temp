@@ -1,0 +1,2 @@
+# getready
+Learning new concepts

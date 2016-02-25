@@ -1,18 +1,23 @@
 
-
 #include <iostream>
 using namespace std;
 
-int main ()
+class Box
 {
-   double* pvalue  = NULL; // Pointer initialized with null
-   pvalue  = new double;   // Request memory for the variable
- 
-   *pvalue = 29494.99;     // Store value at allocated address
-   cout << " Address is  : " << pvalue << endl;
-   cout << "Value of pvalue : " << *pvalue << endl;
+   public:
+      Box() { 
+         cout << "Constructor called!" <<endl; 
+      }
+      ~Box() { 
+         cout << "Destructor called!" <<endl; 
+      }
+};
 
-   delete pvalue;         // free up the memory.
+int main( )
+{
+   Box* myBoxArray = new Box[4];
+
+   delete [] myBoxArray; // Delete array
 
    return 0;
 }

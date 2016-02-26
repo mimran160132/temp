@@ -28,64 +28,67 @@ void append(int num)
  
 void add( int num )
 {
-    NODE temp;
-    temp=(NODE)malloc(sizeof(struct node));
-    temp->data=num;
-    if (head== NULL)
-    {
-    head=temp;
-    head->next=NULL;
-    }
-    else
-    {
-    temp->next=head;
-    head=temp;
-    }
+	NODE temp;
+    	temp=(NODE)malloc(sizeof(struct node));
+    	temp->data=num;
+    	if (head== NULL)
+    	{
+    		head=temp;
+    		head->next=NULL;
+    	}
+    	else
+    	{
+    		temp->next=head;
+    		head=temp;
+    	}
 }
+
+// Insert NODE at a given location in LINKED LIST
 void addafter(int num, int loc)
 {
-    int i;
-    NODE temp,left,right;
-    right=head;
-    for(i=1;i<loc;i++)
-    {
-    left=right;
-    right=right->next;
-    }
-    temp=(NODE)malloc(sizeof(struct node));
-    temp->data=num;
-    left->next=temp;
-    left=temp;
-    left->next=right;
-    return;
+    	int i;
+    	NODE temp,left,right;
+    	right=head;
+    	for(i=1;i<loc;i++)
+    	{
+    		left=right;
+    		right=right->next;
+    	}
+    	temp=(NODE)malloc(sizeof(struct node));
+    	temp->data=num;
+    	left->next=temp;
+    	left=temp;
+    	left->next=right;
+    	return;
 }
  
  
- 
+// Inserting NODE in LINKED LIST
+
 void insert(int num)
 {
-    int c=0;
-    NODE temp;
-    temp=head;
-    if(temp==NULL)
-    {
-    add(num);
-    }
-    else
-    {
-    while(temp!=NULL)
-    {
-        if(temp->data<num)
-        c++;
-        temp=temp->next;
-    }
-    if(c==0)
-        add(num);
-    else if(c<count())
-        addafter(num,++c);
-    else
-        append(num);
-    }
+	int c=0;
+   	NODE temp;
+    	temp=head;
+    	if(temp==NULL)
+    	{
+    		add(num);
+    	}
+    	else
+    	{
+    		while(temp!=NULL)
+    		{
+        		if(temp->data<num)
+        		c++;
+        		temp=temp->next;
+    		}
+    		if(c==0)
+        		add(num);
+    		else if(c<count())
+        		addafter(num,++c);
+    		else
+        		append(num);
+    	}
 }
  
  
